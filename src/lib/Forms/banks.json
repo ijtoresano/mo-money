@@ -1,0 +1,72 @@
+[
+  {
+    "name": " BANCO DE CHILE - BANCO EDWARDS | CITI",
+    "SBIFcode": "001",
+    "supported": true
+  },
+  {
+    "name": " BANCO INTERNACIONAL",
+    "SBIFcode": "009",
+    "supported": false
+  },
+  {
+    "name": "SCOTIABANK CHILE - BancoDesarrollo",
+    "SBIFcode": "014",
+    "supported": false
+  },
+  {
+    "name": "BANCO DE CREDITO E INVERSIONES (BCI)",
+    "SBIFcode": "016",
+    "supported": false
+  },
+  {
+    "name": "BANCO BICE",
+    "SBIFcode": "028",
+    "supported": true
+  },
+  {
+    "name": "HSBC BANK",
+    "SBIFcode": "031",
+    "supported": false
+  },
+  {
+    "name": "BANCO SANTANDER - Banefe",
+    "SBIFcode": "028",
+    "supported": true
+  },
+  {
+    "name": "ITAÚ CORPBANCA",
+    "SBIFcode": "039",
+    "supported": false
+  },
+  {
+    "name": "BANCO SECURITY",
+    "SBIFcode": "049",
+    "supported": false
+  },
+  {
+    "name": "BANCO FALABELLA",
+    "SBIFcode": "051",
+    "supported": false
+  },
+  {
+    "name": "BANCO RIPLEY",
+    "SBIFcode": "053",
+    "supported": false
+  },
+  {
+    "name": "BANCO CONSORCIO",
+    "SBIFcode": "055",
+    "supported": false
+  },
+  {
+    "name": "SCOTIABANK AZUL - BBVA",
+    "SBIFcode": "504",
+    "supported": true
+  },
+  {
+    "name": "BANCO BTG PACTUAL",
+    "SBIFcode": "059",
+    "supported": false
+  }
+]

@@ -50,11 +50,11 @@
     },
     "users_count": {
       ".read": true,
-      ".write": false
+      ".write": true
     },
     "provider_count": {
       ".read": true,
-      ".write": false
+      ".write": true
     },
     "roles": {
       ".read": "auth != null && root.child('admins/'+auth.uid).exists()",
@@ -112,11 +112,11 @@
     },
     "user_registrations_per_day": {
       ".read": true,
-      ".write": false
+      ".write": true
     },
     "user_registrations_per_month": {
       ".read": true,
-      ".write": false
+      ".write": true
     }
   }
 }

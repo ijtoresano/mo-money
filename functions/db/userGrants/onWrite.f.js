@@ -31,9 +31,9 @@ export default functions
     await wait(random(1000, 4000))
 
     if (snap.after.exists() && value.indexOf('storage') !== -1) {
-      await customClaims.setClaim(uid, grant)
+      await setClaim(uid, grant)
     } else {
-      await customClaims.removeClaim(uid, grant)
+      await removeClaim(uid, grant)
     }
 
     const user = await admin.auth().getUser(uid)

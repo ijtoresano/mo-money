@@ -144,8 +144,31 @@ const messages = defineMessages({
   user_label_search: 'Buscar usuario',
   document: 'Documento',
   collection: 'Colección',
-  infinitelist: 'Infinitelist'
-
+  infinitelist: 'Infinitelist',
+  user_label: 'Usuario',
+  uid_label: 'Usuario',
+  credit_cards: 'Tarjetas de Crédito',
+  create_credit_card: 'Crear Tarjeta de Crédito',
+  delete_credit_card_title: 'Borrar Tarjeta de Crédito',
+  delete_credit_card_message: '¿Estás seguro que quieres borrar esta Tarjeta de Crédito?',
+  edit_credit_card: 'Editar Tarjeta de Crédito',
+  user_hint: 'Ingresa un usuario',
+  network_label: 'Network',
+  network_hint: 'Ingresa una Network',
+  bank_label: 'Banco',
+  bank_hint: 'Banco emisor de Tarjeta de Crédito',
+  operator_contains_label: 'Operador',
+  account_statements: 'Estados de Cuenta',
+  create_account_statements: 'Crear Estado de Cuenta',
+  delete_account_statements_title: 'Borrar Estado de Cuenta',
+  delete_account_statements_message: '¿Estás seguro que quieres borrar esta Estado de Cuenta?',
+  edit_account_statements: 'Editar Estado de Cuenta',
+  date_hint: 'Ingresa Fecha',
+  date_label: 'Fecha',
+  currencie_hint: 'Ingresa moneda',
+  currency_label: 'Moneda',
+  dolar: 'Dólares',
+  peso: 'Pesos Chilenos',
 })
 
 export default messages

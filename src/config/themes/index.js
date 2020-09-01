@@ -6,7 +6,14 @@ import blue from '@material-ui/core/colors/blue'
 const themes = [
   {
     id: 'default',
-    color: blue[500]
+    color: blue[500],
+    source: {
+      palette: {
+        primary: '#689cc5',
+        scondary: '#93dbe9',
+        error: red
+      }
+    }
   },
   {
     id: 'red',

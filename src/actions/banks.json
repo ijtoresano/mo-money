@@ -1,0 +1,13 @@
+{
+  "SANTANDER": {
+    "bank": "SANTANDER",
+    "card_name": 45,
+    "card_number": 8,
+    "textCurrency": "ABONO REALIZADO",
+    "textDate": "FECHA ESTADO DE CUENTA",
+    "transaction_start": "MOVIMIENTOS TARJETA XXXX-",
+    "transaction_end": "3. CARGOS, COMISIONES, IMPUESTOS Y ABONOS",
+    "page_end": "COMPROBANTE DE PAGO",
+    "page_begin": "DE"
+  }
+}

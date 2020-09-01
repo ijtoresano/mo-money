@@ -25,8 +25,8 @@ service cloud.firestore {
 
 
     //Checks if user has specific UID
-    function isOwner(userUid){
-      return request.auth.uid == userUid 
+    function isOwner(uid){
+      return request.auth.uid == uid 
     }
 
     /// FUNCTIONS END ///
@@ -38,8 +38,38 @@ service cloud.firestore {
     match /tasks {
       allow read, write: if isSignedIn();
       match /{document=**}{
-        allow read,write: if isSignedIn();
+        allow read, write: if isSignedIn();
 
+      }
+    }
+
+    match /credit_cards/{credit_card} {
+    	allow create: if isAdmin() || request.auth.uid == request.resource.data.uid;
+      allow read, update, delete: if isAdmin() || isOwner(resource.data.uid);
+      
+      match /account_statements/{account_statement} {
+      	allow read, write: if isAdmin() || isOwner(get(/databases/$(database)/documents/credit_cards/$(credit_card)).data.uid);
+        
+        match /transactions/{transaction} {
+        	allow read, write: if isAdmin() || isOwner(get(/databases/$(database)/documents/credit_cards/$(credit_card)).data.uid);
+        }
+      }
+    }
+    
+    match /categories/{category} {
+      allow read: if isAdmin() || (isSignedIn() && (resource.data.public == true || isOwner(resource.data.uid)));
+      allow write: if isAdmin() || (isSignedIn() && isOwner(resource.data.uid));
+    }
+
+  match /transaction_descriptions/{td} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin() || (isSignedIn() && isOwner(resource.data.uid))
+  }
+
+    match /admins {
+      allow read: if isAdmin();
+      match /{document=**}{
+        allow read, write: if isAdmin() && isOwner(resource.id);
       }
     }
 

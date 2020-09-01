@@ -9,16 +9,21 @@ import React, { useEffect } from 'react'
 import Toolbar from '@material-ui/core/Toolbar'
 import Tooltip from '@material-ui/core/Tooltip'
 import Typography from '@material-ui/core/Typography'
-import { GitHubIcon } from 'rmw-shell/lib/components/Icons'
+import InfoIcon from '@material-ui/icons/Info'
 import { Helmet } from 'react-helmet'
 import { withRouter } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
+import PropTypes from 'prop-types'
 import messages_en from './en.json'
 import messages_de from './de.json'
 import messages_bs from './bs.json'
 import messages_es from './es.json'
 import messages_ru from './ru.json'
 import parseLanguages, { formatMessage } from 'rmw-shell/lib/utils/localeTools'
+import pdf from './OutEstadoCuenta.pdf'
+import { parseStatement } from '../../actions/AccountStatements'
+
+console.log(parseStatement(pdf))
 
 const messageSources = {
   de: messages_de,
@@ -185,10 +190,10 @@ const LandingPage = ({ classes, history, theme }) => {
         <Toolbar disableGutters>
           <div style={{ flex: 1 }} />
 
-          <Tooltip id="tooltip-icon1" title="Sign in">
+          <Tooltip id="tooltip-icon1" title={formatMessage(messages, 'main.signin')}>
             <IconButton
               name="signin"
-              aria-label="Open Github"
+              aria-label="sign in"
               color="inherit"
               onClick={() => {
                 history.push('/signin')
@@ -198,16 +203,15 @@ const LandingPage = ({ classes, history, theme }) => {
               <LockIcon />
             </IconButton>
           </Tooltip>
-          <Tooltip id="tooltip-icon2" title="GitHub repository">
+          <Tooltip id="tooltip-icon2" title="About us">
             <IconButton
-              name="github"
-              aria-label="Open Github"
+              name="about"
+              aria-label="About Us"
               color="inherit"
-              href="https://github.com/TarikHuber/react-most-wanted"
-              target="_blank"
+              onClick={() => history.push('/about')}
               rel="noopener"
             >
-              <GitHubIcon />
+              <InfoIcon />
             </IconButton>
           </Tooltip>
         </Toolbar>
@@ -257,55 +261,20 @@ const LandingPage = ({ classes, history, theme }) => {
               <Card className={classes.card}>
                 <CardContent>
                   <Typography variant="h5" component="h2">
-                    {formatMessage(messages, 'main.instal')}
-                  </Typography>
-                  <br />
-                  <Typography>{formatMessage(messages, 'main.run')}</Typography>
-                  <br />
-                  <Typography className={classes.pos} color="textSecondary">
-                    {' '}
-                    npx create-react-app test-app --scripts-version
-                    rmw-react-scripts{' '}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button
-                    size="small"
-                    onClick={() => {
-                      var win = window.open(
-                        'https://github.com/TarikHuber/rmw-shell',
-                        '_blank'
-                      )
-                      win.focus()
-                    }}
-                  >
-                    {formatMessage(messages, 'main.more')}
-                  </Button>
-                </CardActions>
-              </Card>
-              <Card className={classes.card}>
-                <CardContent>
-                  <Typography variant="h5" component="h2">
                     {formatMessage(messages, 'main.usage')}
                   </Typography>
                   <br />
                   <Typography>{formatMessage(messages, 'main.set')}</Typography>
                   <br />
                   <Typography className={classes.pos} color="textSecondary">
-                    {'import App from \'rmw-shell\''}
-                    <br />
-                    {'<App appConfig={{ configureStore, ...config }} />'}
+                    {formatMessage(messages, 'main.discretion')}
                   </Typography>
                 </CardContent>
                 <CardActions>
                   <Button
                     size="small"
                     onClick={() => {
-                      var win = window.open(
-                        'https://github.com/TarikHuber/react-most-wanted',
-                        '_blank'
-                      )
-                      win.focus()
+                      history.push('/howto')
                     }}
                   >
                     {formatMessage(messages, 'main.more')}
@@ -341,6 +310,13 @@ const LandingPage = ({ classes, history, theme }) => {
       </div>
     </div>
   )
+}
+
+
+LandingPage.propTypes = {
+  history : PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
 }
 
 export default withRouter(withStyles(styles, { withTheme: true })(LandingPage))

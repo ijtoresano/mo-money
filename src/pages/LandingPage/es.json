@@ -1,13 +1,14 @@
 {
-  "main.intro": "React Starter-Kit with all Most Wanted features ",
-  "main.title": " REACT MOST WANTED ",
-  "main.start": "GET STARTED",
-  "main.instal": "Installation",
-  "main.run": "Just run this script to start:",
-  "main.more": "Learn More",
-  "main.usage": "Usage",
-  "main.set": "Set your configuration to the App component:",
-  "main.what": "What is this?",
-  "main.this": "This is a OPEN SOURCE demo application that demonstartes the usage of the rmw-shell library with react, Material-UI and firebase.",
-  "main.demo": "This demo has no purpose to do something as an app. It is here just to show how everthing works together."
+  "main.intro": "Mo' Money Less Problems ",
+  "main.title": " MO' MONEY ",
+  "main.start": "EMPEZAR",
+  "main.signin": "Ingresar",
+  "main.info": "Más Info",
+  "main.more": "Saber Más",
+  "main.usage": "Uso",
+  "main.set": "Sube tus estados de cuenta, completa un par de datos y deja que la aplicacón haga el resto por ti:",
+  "main.discretion": "No almacenamos ningun otro dato mas que los que ves en la app y no usamos tus datos para ningún otro proposito que no este descrito aquí",
+  "main.what": "¿Qué es esto?",
+  "main.this": "Esto es un proyecto OPEN SOURCE que te ayuda a ordenar y visualizar tus gastos mensuales asociados a tus cuentas/tarjetas bancarias de una manera amigable.",
+  "main.demo": "Esta app no tiene otro proposito más que ayudar a sus usuarios."
 }
